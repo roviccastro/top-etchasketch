@@ -8,6 +8,12 @@ function createSquare(){
   mainContainer.appendChild(square);
 }
 
+function colorSquare(e){
+  e.target.style.backgroundColor = "gray";
+}
+
 for (let a = 1; a <= 256; a++){
   createSquare()
 }
+
+mainContainer.addEventListener("mouseover", colorSquare);
