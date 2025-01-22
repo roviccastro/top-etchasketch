@@ -2,6 +2,11 @@ const mainContainer = document.createElement("div");
 mainContainer.setAttribute("id", "container");
 document.body.appendChild(mainContainer);
 
+function createRowContainer(){
+  const rowContainer = document.createElement("div");
+  rowContainer.classList.toggle("row-container");
+}
+
 function createSquare(){
   let square = document.createElement("div");
   square.classList.toggle("square");
