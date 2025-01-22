@@ -4,6 +4,10 @@ const gridBtn = document.getElementById("grid-btn")
 let gridNumber = 16;
 let numericSize = 500 / gridNumber;
 
+function randomNumber(){
+  return Math.floor(Math.random() * 255) // For RGB Value
+}
+
 function createSquare(){
   let square = document.createElement("div");
   square.classList.toggle("square");
@@ -16,7 +20,8 @@ function createSquare(){
 }
 
 function colorSquare(e){
-  e.target.style.backgroundColor = "gray";
+  let color = `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`
+  e.target.style.backgroundColor = `${color}`
 }
 
 function askUser(){
