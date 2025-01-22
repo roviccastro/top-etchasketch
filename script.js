@@ -1,6 +1,8 @@
 const mainContainer = document.querySelector("div");
+const gridBtn = document.getElementById("grid-btn")
 
-let numericSize = 500 / 16;
+let gridNumber = 16;
+let numericSize = 500 / gridNumber;
 
 function createSquare(){
   let square = document.createElement("div");
@@ -17,6 +19,19 @@ function colorSquare(e){
   e.target.style.backgroundColor = "gray";
 }
 
-for (let a = 1; a <= 16*16; a++){
+function askUser(){
+  gridNumber = window.prompt('Enter grid size: ', 16);
+
+  if (gridNumber <= 100){
+    console.log('Valid');
+  } else {
+    alert('Exceed maximum grid size! (Maximum of 100)')
+    gridNumber = window.prompt('Enter grid size: ', 16);
+  }
+}
+
+for (let a = 1; a <= gridNumber * gridNumber; a++){
   createSquare()
 }
+
+gridBtn.addEventListener("click", askUser);
