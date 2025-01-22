@@ -8,6 +8,6 @@ function createSquare(){
   mainContainer.appendChild(square);
 }
 
-for (let a = 0; a <= 256; a++){
+for (let a = 1; a <= 256; a++){
   createSquare()
 }
