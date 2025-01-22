@@ -21,4 +21,5 @@
 .square{
   display: flex;
   flex: 1 1 auto;
+  border: solid 1px whitesmoke;
 }
