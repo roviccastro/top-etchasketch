@@ -20,7 +20,11 @@ function colorSquare(e){
 }
 
 function askUser(){
-  gridNumber = window.prompt('Enter grid size: ', 16);
+  let number = window.prompt('Enter grid size: ', 16);
+  let size = 500 / number
+
+  gridNumber = number;
+  numericSize = size;
 
   if (gridNumber <= 100){
     initializeGrid()

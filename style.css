@@ -15,10 +15,10 @@
   display: flex;
   flex-flow: row wrap;
   width: 500px;
+  height: 500px;
 }
 
 .square{
   display: flex;
   flex: 1 1 auto;
-  border: solid 1px gray;
 }
