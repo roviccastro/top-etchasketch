@@ -23,15 +23,24 @@ function askUser(){
   gridNumber = window.prompt('Enter grid size: ', 16);
 
   if (gridNumber <= 100){
-    console.log('Valid');
+    initializeGrid()
   } else {
     alert('Exceed maximum grid size! (Maximum of 100)')
     gridNumber = window.prompt('Enter grid size: ', 16);
   }
 }
 
-for (let a = 1; a <= gridNumber * gridNumber; a++){
-  createSquare()
+function initializeGrid(){
+
+  const squares = document.querySelectorAll(".square");
+  for (each of squares){
+    mainContainer.removeChild(each);
+  }
+
+  for (let a = 1; a <= gridNumber * gridNumber; a++){
+    createSquare()
+  }
+
 }
 
 gridBtn.addEventListener("click", askUser);
