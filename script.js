@@ -5,6 +5,8 @@ document.body.appendChild(mainContainer);
 function createSquare(){
   let square = document.createElement("div");
   square.classList.toggle("square");
+  square.addEventListener("mouseover" ,colorSquare);
+  
   mainContainer.appendChild(square);
 }
 
@@ -15,5 +17,3 @@ function colorSquare(e){
 for (let a = 1; a <= 256; a++){
   createSquare()
 }
-
-mainContainer.addEventListener("mouseover", colorSquare);

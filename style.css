@@ -14,10 +14,14 @@
 #container{
   display: flex;
   flex-flow: row wrap;
-  justify-content: stretch;
-  align-items: stretch;
+  flex: 1 1 auto;
 
   width: 500px;
   height: 500px;
   border: 1px solid black;
+}
+
+.square{
+  display: flex;
+  flex: 1 1 auto;
 }
