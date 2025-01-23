@@ -4,8 +4,16 @@ const gridBtn = document.getElementById("grid-btn")
 let gridNumber = 16;
 let numericSize = 500 / gridNumber;
 
-function randomNumber(){
-  return Math.floor(Math.random() * 255) // For RGB Value
+function randomNumber(rgb, opacity){
+  if (rgb){
+    rgb = Math.floor(Math.random() * 255);
+    return rgb;
+  } else if (opacity){
+    opacity += .10;
+    return opacity;
+  } else {
+    return
+  }
 }
 
 function createSquare(){
@@ -20,8 +28,22 @@ function createSquare(){
 }
 
 function colorSquare(e){
-  let color = `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`
-  e.target.style.backgroundColor = `${color}`
+
+  if (e.target.classList == "square"){
+    let color = `rgba(${randomNumber('_')}, ${randomNumber('_')}, ${randomNumber('_')}, 1)`
+
+    e.target.style.opacity = '0.10';
+    
+    e.target.style.backgroundColor = `${color}`;
+    e.target.classList.remove("square");
+  } else {
+    increaseSquareOpacity(e);
+  }
+}
+
+function increaseSquareOpacity(e){
+  e.target.style.opacity = `${+(e.target.style.opacity) + 0.10}`
+  console.log('touch')
 }
 
 function askUser(){
