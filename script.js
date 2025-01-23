@@ -32,9 +32,9 @@ function colorSquare(e){
   if (e.target.classList == "square"){
     let color = `rgba(${randomNumber('_')}, ${randomNumber('_')}, ${randomNumber('_')}, 1)`
 
+    e.target.style.backgroundColor = `${color}`;
     e.target.style.opacity = '0.10';
     
-    e.target.style.backgroundColor = `${color}`;
     e.target.classList.remove("square");
   } else {
     increaseSquareOpacity(e);
