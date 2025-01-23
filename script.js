@@ -43,7 +43,6 @@ function colorSquare(e){
 
 function increaseSquareOpacity(e){
   e.target.style.opacity = `${+(e.target.style.opacity) + 0.10}`
-  console.log('touch')
 }
 
 function askUser(){
