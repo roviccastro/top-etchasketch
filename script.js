@@ -1,4 +1,4 @@
-const mainContainer = document.querySelector("#container");
+const mainContainer = document.querySelector("div");
 const gridBtn = document.getElementById("grid-btn")
 
 let gridNumber = 16;
