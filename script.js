@@ -1,4 +1,4 @@
-const mainContainer = document.querySelector("div");
+const mainContainer = document.querySelector("#container");
 const gridBtn = document.getElementById("grid-btn")
 
 let gridNumber = 16;
@@ -18,7 +18,7 @@ function randomNumber(rgb, opacity){
 
 function createSquare(){
   let square = document.createElement("div");
-  square.classList.toggle("square");
+  square.classList.add("square");
 
   square.style.width = `${numericSize}px`;
   square.style.height = `${numericSize}px`;
@@ -62,10 +62,14 @@ function askUser(){
 
 function initializeGrid(){
 
-  const squares = document.querySelectorAll(".square");
-  for (each of squares){
-    mainContainer.removeChild(each);
+  while(mainContainer.firstChild){
+    mainContainer.removeChild(mainContainer.firstChild);
   }
+
+  // const squares = document.querySelectorAll(".square");
+  // for (each of squares){
+  //   mainContainer.removeChild(each);
+  // }
 
   for (let a = 1; a <= gridNumber * gridNumber; a++){
     createSquare()
