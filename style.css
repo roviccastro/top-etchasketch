@@ -39,7 +39,14 @@ body{
   padding: 10px;
 }
 
-#grid-btn{
+.btn-container{
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+}
+
+#grid-btn,
+#opacity-btn{
   display: flex;
 
   border: solid 0px black;
