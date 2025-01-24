@@ -35,7 +35,12 @@ function colorSquare(e){
     let color = `rgba(${randomNumber('_')}, ${randomNumber('_')}, ${randomNumber('_')}, 1)`
 
     e.target.style.backgroundColor = `${color}`;
-    e.target.style.opacity = '0.10';
+    
+    if (opacityToggle){
+      e.target.style.opacity = '0.10';
+    } else {
+      e.target.style.opacity = '1';
+    }
     
     e.target.classList.remove("square");
   } else {
