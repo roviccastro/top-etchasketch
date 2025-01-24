@@ -1,8 +1,10 @@
 const mainContainer = document.querySelector("#container");
-const gridBtn = document.getElementById("grid-btn")
+const gridBtn = document.getElementById("grid-btn");
+const opacityBtn = document.getElementById("opacity-btn");
 
 let gridNumber = 16;
 let numericSize = 500 / gridNumber;
+let opacityToggle = true;
 
 function randomNumber(rgb, opacity){
   if (rgb){
@@ -41,8 +43,12 @@ function colorSquare(e){
   }
 }
 
-function increaseSquareOpacity(e){
-  e.target.style.opacity = `${+(e.target.style.opacity) + 0.10}`
+function increaseSquareOpacity(e, onoff){
+  if (onoff){
+    e.target.style.opacity = `${+(e.target.style.opacity) + 0.10}`
+  } else {
+    e.target.style.opacity = `1`;
+  }
 }
 
 function askUser(){
@@ -78,3 +84,11 @@ function initializeGrid(){
 }
 
 gridBtn.addEventListener("click", askUser);
+
+opacityBtn.addEventListener("click", () => {
+  if (opacityToggle){
+    opacityToggle = false;
+  } else{
+    opacityToggle = true;
+  }
+})
