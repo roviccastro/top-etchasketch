@@ -50,9 +50,7 @@ function colorSquare(e){
 
 function increaseSquareOpacity(e, onoff){
   if (onoff){
-    console.log(e.target.style.opacity);
     e.target.style.opacity = `${+(e.target.style.opacity) + 0.10}`
-    console.log(e.target.style.opacity)
   } else {
     e.target.style.opacity = `1`;
   }
@@ -93,13 +91,13 @@ function initializeGrid(){
 gridBtn.addEventListener("click", askUser);
 
 opacityBtn.addEventListener("click", () => {
-  console.log(opacityToggle)
+  
   if (opacityToggle){
     opacityToggle = false;
-    console.log(opacityToggle)
+    
   } else{
     opacityToggle = true;
-    console.log(opacityToggle)
+    
   }
-  console.log(opacityToggle)
+  
 })
